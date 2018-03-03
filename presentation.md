@@ -14,9 +14,8 @@ Jesse van den Kieboom
 
 - TypeScript?
 - Fundamentals
-- Development tooling
-- Differences between TS and JS
-- TypeScript and the 4.x JS API
+- Development tooling & setup
+- Working with the 4.x JS API
 - Accessor, decorators, and advanced concepts
 
 ---
@@ -195,9 +194,21 @@ class My4dPoint extends MyPoint {
 
 ---
 
+## Setting Up
+
+- [developers.arcgis.com/javascript/latest/guide/typescript-setup](https://developers.arcgis.com/javascript/latest/guide/typescript-setup/index.html)
+
+---
+
 <!-- .slide: class="section" -->
 
-# Demo basic setup & tsconfig?
+# Working with the API
+
+---
+
+<!-- .slide: class="section" -->
+
+# Advanced concepts
 
 ---
 

@@ -1,0 +1,23 @@
+{
+    "compilerOptions": {
+      "outDir": "dist",
+      "module": "amd",
+      "noImplicitAny": true,
+      "noImplicitThis": true,
+      "noImplicitReturns": true,
+      "strictNullChecks": true,
+      "sourceMap": true,
+      "jsx": "react",
+      "jsxFactory": "tsx",
+      "target": "es5",
+      "experimentalDecorators": true,
+      "preserveConstEnums": true,
+      "suppressImplicitAnyIndexErrors": true
+    },
+    "include": [
+      "./app/*"
+    ],
+    "exclude": [
+      "node_modules"
+    ]
+  }
