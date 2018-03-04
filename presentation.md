@@ -206,9 +206,97 @@ class My4dPoint extends MyPoint {
 
 ---
 
+# Imports
+
+- JS API is currently strictly AMD
+- Conventionally classes are exported directly
+- Requires the use of `require` style imports
+- `import MapView = require("esri/views/MapView")`
+
+---
+
+# Auto-cast
+
+- Due to nature of types, auto-cast does not type-check
+  - `get` and `set` must have the same type
+- Auto-casting is supported in constructor signatures only
+  - Still helps in lots of cases
+  - For setting properties, need to import the relevant modules
+
+---
+
+# Typing improvements
+
+- Use of generics where possible `Collection<T>`
+- Strictly type events (`MapView.on("mouse-wheel", ...)`))
+- "Advanced" auto-casts like colors (`"red"`), screen sizes (`"5px"`) and basemaps `"streets"`
+
+---
+
 <!-- .slide: class="section" -->
 
 # Advanced concepts
+
+---
+
+# Promises
+
+- In 4.7, promises are more compatible with native promises
+- Replaced `then` with `when` for `esri/core/Promise`
+- Typings are more compatible (although not fully compatible)
+- General advice is to wrap API promises in native if needed
+  until JS API switches to native promises
+
+---
+
+# Async/await
+
+- Makes asynchronous programming easy again (mostly)
+- Internally based on promises
+
+```ts
+const featureSet = await layer.queryFeatures(query);
+```
+
+- Typescript polyfills async/await when targetting ES5
+- DEMO code
+
+---
+
+# keyof
+
+- `keyof` allows for "dynamic" type creation
+- Can help making types flexible but keeping them strict
+
+```ts
+type Partial<T> = {
+  [P in keyof T]?: T[P];
+}
+
+export function set<T, P extends keyof T>(instance: T, propName: P, propValue: T[P]) {
+  instance[propName] = propValue;
+}
+```
+
+---
+
+# Writing Accessor based classes
+
+- Can be useful to use Accessor based classes in your app
+- Also required for creating custom API based widgets
+- API classes are using dojo declare, requires some additional work to integrate with TS
+
+---
+
+# Simple subclass
+
+- DEMO code
+
+---
+
+# Multiple inheritance
+
+- DEMO code
 
 ---
 
