@@ -301,6 +301,12 @@ export function set<T, P extends keyof T>(instance: T, propName: P, propValue: T
 
 ---
 
+# Extending the API typings
+
+- DEMO code
+
+---
+
 <!-- .slide: class="questions" -->
 
 ## Questions?
