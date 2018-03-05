@@ -14,6 +14,8 @@
       }
     </style>
     <link rel="stylesheet" href="https://js.arcgis.com/4.6/esri/css/main.css">
+    <link rel="stylesheet" href="https://s3-us-west-1.amazonaws.com/patterns.esri.com/files/calcite-web/1.0.0-rc.8/css/calcite-web.min.css">
+    <link rel="stylesheet" href="/app/css/custom.css">
     <script>
       window.dojoConfig = {
         has: {
@@ -23,6 +25,16 @@
           {
             name: "app",
             location: "/app"
+          },
+          {
+            name: "react",
+            location: "/node_modules/react/umd",
+            main: "react.development"
+          },
+          {
+            name: "react-dom",
+            location: "/node_modules/react-dom/umd",
+            main: "react-dom.development"
           }
         ]
       };

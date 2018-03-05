@@ -5,7 +5,6 @@
       "noImplicitThis": true,
       "noImplicitReturns": true,
       "strictNullChecks": true,
-      "sourceMap": true,
       "target": "es5",
       "experimentalDecorators": true,
       "preserveConstEnums": true,
@@ -16,5 +15,10 @@
     ],
     "exclude": [
       "node_modules"
+    ],
+    "files": [
+      "./node_modules/dojo-typings/dojo/1.11/modules.d.ts",
+      "./node_modules/dojo-typings/dijit/1.11/modules.d.ts",
+      "./node_modules/dojo-typings/dojox/1.11/modules.d.ts"
     ]
   }
