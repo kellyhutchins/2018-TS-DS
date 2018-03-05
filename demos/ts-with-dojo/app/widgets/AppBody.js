@@ -27,7 +27,7 @@ define(["require", "exports", "dijit/_WidgetBase", "dijit/_TemplatedMixin", "doj
         AppBody.prototype.updateSidePanel = function (hiddenBuildings) {
             var _this = this;
             if (hiddenBuildings.length > 0) {
-                this.unmaskAllBtn.style.display = "block";
+                this.unmaskAllBtn.style.display = "inline-block";
             }
             else {
                 this.unmaskAllBtn.style.display = "none";

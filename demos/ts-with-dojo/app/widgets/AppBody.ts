@@ -42,7 +42,7 @@ export default class AppBody {
 
   updateSidePanel(hiddenBuildings: string[]) {
     if (hiddenBuildings.length > 0) {
-      this.unmaskAllBtn.style.display = "block";
+      this.unmaskAllBtn.style.display = "inline-block";
     } else {
       this.unmaskAllBtn.style.display = "none";
     }

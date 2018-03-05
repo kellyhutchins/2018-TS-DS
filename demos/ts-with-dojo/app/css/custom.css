@@ -11,6 +11,11 @@
 
 .label-btn {
   cursor: pointer;
+  background-color: #0079c1;
+}
+
+.label-btn:hover {
+  background-color: #005e95;
 }
 
 .map-container {

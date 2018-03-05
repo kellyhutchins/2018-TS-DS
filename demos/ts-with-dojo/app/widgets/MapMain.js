@@ -42,10 +42,7 @@ define(["require", "exports", "dijit/_WidgetBase", "dijit/_TemplatedMixin", "doj
                     view.hitTest(event)
                         .then(function (response) {
                         var graphic = response.results[0].graphic;
-                        // check if a graphic is returned from the hitTest
-                        // and that it belongs to the Buildings layer
                         if (graphic && graphic.layer.title === "Buildings") {
-                            // function that hides the building the user clicked on
                             _this.hideBuilding(graphic.attributes.OBJECTID);
                         }
                     });
