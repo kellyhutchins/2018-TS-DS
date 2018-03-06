@@ -1,4 +1,4 @@
-import * as React from "react";
+import React = require("react");
 
 interface LabelProps {
   handleLabelClick: (id: string) => void;

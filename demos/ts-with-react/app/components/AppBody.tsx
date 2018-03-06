@@ -1,4 +1,4 @@
-import * as React from "react";
+import React = require("react");
 
 import MapMain from "./MapMain";
 import Label from "./Label";
