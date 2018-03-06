@@ -1,4 +1,4 @@
-import * as React from "react";
+import React = require("react");
 
 import WebScene = require("esri/WebScene");
 import SceneView = require("esri/views/SceneView");
