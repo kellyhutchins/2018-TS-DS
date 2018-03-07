@@ -1,8 +1,8 @@
-import React = require("react");
+import React from "react";
 
-import WebScene = require("esri/WebScene");
-import SceneView = require("esri/views/SceneView");
-import SceneLayer = require("esri/layers/SceneLayer");
+import WebScene from "esri/WebScene";
+import SceneView from "esri/views/SceneView";
+import SceneLayer from "esri/layers/SceneLayer";
 
 interface MapMainProps {
   hiddenBuildings: string[];

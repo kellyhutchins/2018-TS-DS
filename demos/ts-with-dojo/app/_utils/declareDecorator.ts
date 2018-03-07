@@ -1,4 +1,4 @@
-import * as declare from "dojo/_base/declare";
+import declare from "dojo/_base/declare";
 
 /**
  * A decorator that converts a TypeScript class into a declare constructor.

@@ -315,18 +315,17 @@ export function set<T, P extends keyof T>(instance: T, propName: P, propValue: T
 
 ## Essentials
 
-- typescript: `npm install -g typescript`
-- JS API 4.x typings: `npm install --save @types/arcgis-js-api`
-- JS API 3.x typings: `npm install --save @types/arcgis-js-api@3`
+- typescript: `npm install --save-dev typescript`
+- JS API 4.x typings: `npm install --save-dev @types/arcgis-js-api`
+- JS API 3.x typings: `npm install --save-dev @types/arcgis-js-api@3`
 
 ---
 
 ## Recommended
 
 - [Visual Studio Code](https://code.visualstudio.com/)
-- tslint: `npm install --save tslint`
-- dojo typings: `npm install --save dojo-typings`
-- ts-node: `npm install -g ts-node`
+- tslint: `npm install --save-dev tslint`
+- dojo typings: `npm install --save-dev dojo-typings`
 
 ---
 
@@ -418,6 +417,8 @@ export function set<T, P extends keyof T>(instance: T, propName: P, propValue: T
 **Help us to improve** by filling out the survey
 
 ![Survey](images/survey-slide.png)
+
+Slides & Demos: [github.com/nicksenger/2018-TS-DS](https://github.com/nicksenger/2018-TS-DS)
 
 ---
 

@@ -5,6 +5,7 @@
       "noImplicitThis": true,
       "noImplicitReturns": true,
       "strictNullChecks": true,
+      "esModuleInterop": true,
       "target": "es5",
       "experimentalDecorators": true,
       "preserveConstEnums": true,

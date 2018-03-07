@@ -1,18 +1,18 @@
-import _WidgetBase = require("dijit/_WidgetBase");
-import _TemplatedMixin = require("dijit/_TemplatedMixin");
-import template = require("dojo/text!./templates/AppBody.html");
+import _WidgetBase from "dijit/_WidgetBase";
+import _TemplatedMixin from "dijit/_TemplatedMixin";
+import template from "dojo/text!./templates/AppBody.html";
 
 import declare from "../_utils/declareDecorator";
 
 import MapMain from "./MapMain";
 import Label from "./Label";
 
-interface AppBodyParams {
+interface AppBodyParams {}
 
-}
+interface AppBody extends _WidgetBase, _TemplatedMixin {}
 
 @declare(_WidgetBase, _TemplatedMixin)
-export default class AppBody {
+class AppBody {
   params: AppBodyParams;
   templateString: string = template;
   unmaskAllBtn: HTMLElement;
@@ -70,3 +70,5 @@ export default class AppBody {
     this.mapMain.unhideBuilding(id);
   }
 }
+
+export default AppBody;
