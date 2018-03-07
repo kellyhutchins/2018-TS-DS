@@ -1,10 +1,10 @@
-import _WidgetBase = require("dijit/_WidgetBase");
-import _TemplatedMixin = require("dijit/_TemplatedMixin");
-import template = require("dojo/text!./templates/MapMain.html");
+import _WidgetBase from "dijit/_WidgetBase";
+import _TemplatedMixin from "dijit/_TemplatedMixin";
+import template from "dojo/text!./templates/MapMain.html";
 
-import WebScene = require("esri/WebScene");
-import SceneView = require("esri/views/SceneView");
-import SceneLayer = require("esri/layers/SceneLayer");
+import WebScene from "esri/WebScene";
+import SceneView from "esri/views/SceneView";
+import SceneLayer from "esri/layers/SceneLayer";
 
 import declare from "../_utils/declareDecorator";
 
@@ -12,8 +12,10 @@ interface MapMainParams {
   updateSidePanel: (hiddenBuildings: string[]) => void;
 }
 
+interface MapMain extends _WidgetBase, _TemplatedMixin {}
+
 @declare(_WidgetBase, _TemplatedMixin)
-export default class MapMain {
+class MapMain {
   params: MapMainParams;
   templateString: string = template;
   mapContainer: HTMLElement;
@@ -24,19 +26,19 @@ export default class MapMain {
     this.params = params;
   }
 
-  public unhideBuilding(id: string) {
+  unhideBuilding(id: string) {
     this.hiddenBuildings.splice(this.hiddenBuildings.indexOf(id), 1);
     this.updateDefinitionExpression();
     this.params.updateSidePanel(this.hiddenBuildings);
   }
 
-  public unhideAllBuildings() {
+  unhideAllBuildings() {
     this.hiddenBuildings = [];
     this.updateDefinitionExpression();
     this.params.updateSidePanel(this.hiddenBuildings);
   }
 
-  private postCreate() {
+  postCreate() {
     const webscene = new WebScene({
       portalItem: {
         id: "10ede348e4c54c77b45f6ebab2d018db"
@@ -81,3 +83,5 @@ export default class MapMain {
     this.sceneLayer.set("definitionExpression", expr);
   }
 }
+
+export default MapMain;

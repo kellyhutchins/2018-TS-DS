@@ -1,6 +1,6 @@
-import _WidgetBase = require("dijit/_WidgetBase");
-import _TemplatedMixin = require("dijit/_TemplatedMixin");
-import template = require("dojo/text!./templates/Label.html");
+import _WidgetBase from "dijit/_WidgetBase";
+import _TemplatedMixin from "dijit/_TemplatedMixin";
+import template from "dojo/text!./templates/Label.html";
 
 import declare from "../_utils/declareDecorator";
 
@@ -9,8 +9,10 @@ interface LabelParams {
   handleLabelClick: (id: string) => void;
 }
 
+interface Label extends _WidgetBase, _TemplatedMixin {}
+
 @declare(_WidgetBase, _TemplatedMixin)
-export default class Label {
+class Label {
   params: LabelParams;
   templateString: string = template;
   label: HTMLElement;
@@ -19,9 +21,11 @@ export default class Label {
     this.params = params;
   }
 
-  private postCreate() {
+  postCreate() {
     this.label.addEventListener("click", () => {
       this.params.handleLabelClick(this.params.id);
     });
   }
 }
+
+export default Label;
