@@ -211,7 +211,8 @@ class My4dPoint extends MyPoint {
 - JS API is currently strictly AMD
 - Conventionally classes are exported directly
 - Requires the use of `require` style imports
-- `import MapView = require("esri/views/MapView")`
+  - `import MapView = require("esri/views/MapView")`
+  - Or, use `esModuleInterop` with typescript 2.7.2
 
 ---
 
