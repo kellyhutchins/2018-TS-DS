@@ -1,6 +1,5 @@
 {
     "compilerOptions": {
-      "outDir": "dist",
       "module": "amd",
       "noImplicitAny": true,
       "noImplicitThis": true,
