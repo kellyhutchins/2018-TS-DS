@@ -169,7 +169,7 @@ body {
 
 .reveal code {
   font-family: monospace;
-  color: rgb(149, 223, 247);
+  color: rgb(195, 255, 205);
 }
 
 .reveal pre code {
@@ -223,7 +223,7 @@ body {
  * LINKS
  *********************************************/
 .reveal a {
-  color: #2DD4CB;
+  color: rgb(195, 255, 205);
   text-decoration: none;
   -webkit-transition: color 0.15s ease;
   -moz-transition: color 0.15s ease;
