@@ -26,7 +26,7 @@ Jesse van den Kieboom
 
 ---
 
-## Superset of JavaScipt
+## Superset of JavaScript
 
 - *Transpiles* to JavaScript
 - ESNext features (import, =>, rest/spread, async/await, etc)
