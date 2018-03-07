@@ -173,6 +173,142 @@ class My4dPoint extends MyPoint {
 
 <!-- .slide: class="section" -->
 
+# Advanced types
+
+---
+
+## Union types
+
+- Type something as `one of` multiple choices of a type
+
+```ts
+// Set a size as either a number, of a string like "1px",
+// "2em" etc
+function setSize(v: number | string) {
+  // ...
+}
+```
+
+---
+
+## Intersection types
+
+- Combining multiple types to a single type representing all of the features
+
+```ts
+function mixin<U, T>(u: U, t: T): T & U {
+  // ...
+}
+```
+
+---
+
+## Type guards
+
+- Type guards allow TS to infer a specific type when a value may take multiple types (`union`)
+- Types are `narrowed` to a more specific set by type guards
+- Builtin type guards like `typeof`, `instanceof` or `tagged unions`
+
+```ts
+function foo(v: number | string) {
+  if (typeof v === "number") {
+    // TS infers that v: number
+    return v + 1;
+  }
+  else {
+    // TS infers that v: string
+    return `${v} + 1`;
+  }
+}
+```
+
+---
+
+## Type guards
+
+- Tagged unions are very useful to discriminate unions of interfaces
+
+```ts
+interface Foo {
+  type: "foo";
+  foo: string;
+}
+
+interface Bar {
+  type: "bar";
+  bar: string;
+}
+
+function func(v: Foo | Bar) {
+  if (v.type === "foo") {
+    // TS infers that v: Foo
+    return v.foo;
+  }
+  else {
+    // TS infers that v: Bar
+    return v.bar;
+  }
+}
+```
+
+---
+
+## Generics
+
+- Like in C# or Java (_not_ like metaprogramming with templates in C++)
+- "Generalizes" types over type parameters
+
+```ts
+class List<T> {
+  constructor(private data?: T[]) {
+  }
+
+  find(f: (item: T) => boolean): T {
+    // ...
+  }
+}
+
+// Fails
+const list = new List<number>(["1", "2"]);
+
+// OK
+const list = new List<number>([1, 2]);
+
+// TS infers v to be of type number
+list.find(v => v > 1);
+```
+
+---
+
+## keyof
+
+- `keyof` allows for "dynamic" type creation
+- Can help making types flexible but keeping them strict
+
+```ts
+type Partial<T> = {
+  [P in keyof T]?: T[P];
+}
+
+export function set<T, P extends keyof T>(instance: T, propName: P, propValue: T[P]) {
+  instance[propName] = propValue;
+}
+```
+
+---
+
+## Async/await
+
+- Makes asynchronous programming easy again (mostly)
+- Internally based on promises
+- Typescript polyfills async/await when targetting ES5
+
+- [Code](./demos/asyncawait)
+
+---
+
+<!-- .slide: class="section" -->
+
 # Development tooling
 
 ---
@@ -206,7 +342,7 @@ class My4dPoint extends MyPoint {
 
 ---
 
-# Imports
+## Imports
 
 - JS API is currently strictly AMD
 - Conventionally classes are exported directly
@@ -216,7 +352,7 @@ class My4dPoint extends MyPoint {
 
 ---
 
-# Auto-cast
+## Auto-cast
 
 - Due to nature of types, auto-cast does not type-check
   - `get` and `set` must have the same type
@@ -226,7 +362,7 @@ class My4dPoint extends MyPoint {
 
 ---
 
-# Typing improvements
+## Typing improvements
 
 - Use of generics where possible `Collection<T>`
 - Strictly type events (`MapView.on("mouse-wheel", ...)`))
@@ -236,11 +372,11 @@ class My4dPoint extends MyPoint {
 
 <!-- .slide: class="section" -->
 
-# Advanced concepts
+# Advanced API concepts
 
 ---
 
-# Promises
+## Promises
 
 - In 4.7, promises are more compatible with native promises
 - Replaced `then` with `when` for `esri/core/Promise`
@@ -250,60 +386,28 @@ class My4dPoint extends MyPoint {
 
 ---
 
-# Async/await
-
-- Makes asynchronous programming easy again (mostly)
-- Internally based on promises
-
-```ts
-const featureSet = await layer.queryFeatures(query);
-```
-
-- Typescript polyfills async/await when targetting ES5
-- DEMO code
-
----
-
-# keyof
-
-- `keyof` allows for "dynamic" type creation
-- Can help making types flexible but keeping them strict
-
-```ts
-type Partial<T> = {
-  [P in keyof T]?: T[P];
-}
-
-export function set<T, P extends keyof T>(instance: T, propName: P, propValue: T[P]) {
-  instance[propName] = propValue;
-}
-```
-
----
-
-# Writing Accessor based classes
+## Writing Accessor based classes
 
 - Can be useful to use Accessor based classes in your app
 - Also required for creating custom API based widgets
 - API classes are using dojo declare, requires some additional work to integrate with TS
+- [Code](./demos/subclass)
+
+## Multiple inheritance
+
+- Multiple inheritance possible with dojo declare
+- Supported in typescript at runtime and strictly type-checked
+- Uses declaration merging
+- [Code](./demos/subclass)
 
 ---
 
-# Simple subclass
+## Extending the API typings
 
-- DEMO code
-
----
-
-# Multiple inheritance
-
-- DEMO code
-
----
-
-# Extending the API typings
-
-- DEMO code
+- API typings are not always as strict as they can be
+- In rare occasions typings are missing or imprecise
+- Typings can be externally "patched" through declaration merging
+- [Code](./demos/type-extensions)
 
 ---
 
