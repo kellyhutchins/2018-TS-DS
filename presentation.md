@@ -14,6 +14,7 @@ Jesse van den Kieboom
 
 - TypeScript?
 - Fundamentals
+- Advanced types
 - Development tooling & setup
 - Working with the 4.x JS API
 - Accessor, decorators, and advanced concepts
