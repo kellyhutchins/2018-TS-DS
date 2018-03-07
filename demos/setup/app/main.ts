@@ -1,5 +1,5 @@
-import EsriMap = require("esri/Map");
-import MapView = require("esri/views/MapView");
+import EsriMap from "esri/Map";
+import MapView from "esri/views/MapView";
 
 const map = new EsriMap({
     basemap: "streets"

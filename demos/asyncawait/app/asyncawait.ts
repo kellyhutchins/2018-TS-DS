@@ -1,4 +1,4 @@
-import ElevationLayer = require("esri/layers/ElevationLayer");
+import ElevationLayer from "esri/layers/ElevationLayer";
 import { Polyline } from "esri/geometry";
 import { densify as densifyAsync } from "esri/geometry/geometryEngineAsync";
 

@@ -2,9 +2,9 @@
 
 import { subclass, property, declared } from "esri/core/accessorSupport/decorators";
 
-import promiseUtils = require("esri/core/promiseUtils");
-import BaseElevationLayer = require("esri/layers/BaseElevationLayer");
-import ElevationLayer = require("esri/layers/ElevationLayer");
+import * as promiseUtils from "esri/core/promiseUtils";
+import BaseElevationLayer from "esri/layers/BaseElevationLayer";
+import ElevationLayer from "esri/layers/ElevationLayer";
 
 @subclass()
 export class ExaggerationElevationLayer extends declared(BaseElevationLayer) {

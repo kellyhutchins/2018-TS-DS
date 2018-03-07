@@ -3,7 +3,7 @@
 
 // import esri = __esri;
 
-import Accessor = require("esri/core/Accessor");
+import Accessor from "esri/core/Accessor";
 import { subclass, property, declared } from "esri/core/accessorSupport/decorators";
 
 @subclass()
